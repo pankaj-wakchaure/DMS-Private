@@ -1,0 +1,9 @@
+E:\Pankaj Project\DMS.API\DMS.API\bin\DMS.API.dll.config
+E:\Pankaj Project\DMS.API\DMS.API\bin\DMS.API.dll
+E:\Pankaj Project\DMS.API\DMS.API\bin\DMS.API.pdb
+E:\Pankaj Project\DMS.API\DMS.API\obj\Debug\DMS.API.dll
+E:\Pankaj Project\DMS.API\DMS.API\obj\Debug\DMS.API.pdb
+E:\Pankaj Project\DMS.API\DMS.API\bin\EntityFramework.dll
+E:\Pankaj Project\DMS.API\DMS.API\bin\EntityFramework.SqlServer.dll
+E:\Pankaj Project\DMS.API\DMS.API\bin\EntityFramework.xml
+E:\Pankaj Project\DMS.API\DMS.API\bin\EntityFramework.SqlServer.xml

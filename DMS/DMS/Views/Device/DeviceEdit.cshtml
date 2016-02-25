@@ -1,0 +1,73 @@
+﻿@model IList<DMS.Data.Models.Tbl_Devices>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <h4>Device list</h4>
+        <input value="Default Device" id="devName" hidden />
+        <hr />
+        <div class="row">
+            <div class="col-lg-6">
+                <h4>Device Name</h4>
+            </div>
+            <div class="col-lg-6">
+                <h4>Device screenshot interval</h4>
+            </div>
+
+            @foreach (var mod in Model)
+            {
+                @*class="dl-horizontal"*@
+                <dl class="col-lg-6">
+                    <dt>
+                        <a href="#" id="@mod.DeviceId" title="@mod.DeviceName" onclick="a('@mod.DeviceId')">@mod.DeviceName</a>
+                    </dt>
+                </dl>
+                <dl class="col-lg-6">
+                    <dt class="col-lg-6">
+                        <input type="text" id="txt_@mod.DeviceId" class="form-control"  value="@mod.ScreenshotInterval"/>
+                    </dt>
+                    <dt class="col-lg-6">
+                        <a class="btn btn-primary" href="#" id="@mod.DeviceId" title="@mod.DeviceName" onclick="a('@mod.DeviceId')">Update Interval</a>
+                    </dt>
+                </dl>
+            }
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            
+            $(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Device/GetAllDevices',
+                    success: function (Responce) {
+                        alert(Responce.Message);
+                    }
+                });
+            });
+        });
+
+        function a(deviceId) {
+            
+            var id = "txt_" + deviceId;
+            var val = $("#" + id).val();
+            UpdateScreenInerval(deviceId, val);
+        }
+
+        function UpdateScreenInerval(deviceId, interval) {
+            
+            $.ajax({
+                type: 'POST',
+                data: { deviceId: deviceId, interval: interval },
+                url: '/Device/SetScreenshotIntervalByDeviceId',
+                success: function (Responce) {
+                    alert("Inerval update sucessfully");
+                    window.load();
+                }
+            });
+        }
+    </script>

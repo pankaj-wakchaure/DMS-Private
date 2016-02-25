@@ -1,0 +1,99 @@
+﻿@model IList<DMS.Data.Models.Tbl_Devices>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-lg-6">
+        <h4>Online Device list</h4>
+        <input value="Default Device" id="devName" hidden/>
+        <hr />
+        @foreach (var mod in Model)
+        {
+            @*class="dl-horizontal"*@
+            <dl>
+                <dt>
+                    <a href="#" id="@mod.DeviceId" title="@mod.DeviceName" onclick="a('@mod.DeviceId')">@mod.DeviceName</a>
+                </dt>
+            </dl>
+        }
+    </div>
+    <div class="col-lg-6">
+        <h4>Online Device list</h4>
+        <hr />
+        <div>
+            <div><label class="label-control">Advance Search</label></div>
+        <div class="row">
+            <div class="col-lg-2">
+                <label class="label-control">From Date:</label>
+            </div>
+            <div class="col-lg-4"> <input type="text" id="datepickerFrom" class="form-control datepicker"></div>
+            <div class="col-lg-2">
+                <label class="label-control">To Date:</label>
+            </div>
+            <div class="col-lg-4"> <input type="text" id="datepickerTo" class="form-control datepicker"></div>
+        </div>
+        <div class="row">
+            <a href="#" id="advanceSearch" onclick="b()">Search</a>
+        </div>
+
+        <div id="imgDiv"></div>
+    </div>
+</div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#datepickerFrom").datetimepicker();
+                $("#datepickerTo").datetimepicker();
+
+                $(function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/Device/GetAllOnlineDevices',
+                        success: function (Responce) {
+                            alert(Responce.Message);
+                        }
+                    });
+                });
+            });
+
+            function a(deviceId) {
+                $("#devName").val(deviceId);
+                refreshScreen(deviceId, "", "");
+            }
+
+            function b() {
+                alert("hi...");
+                var deviceId = $("#devName").val();
+                fromDate = $("#datepickerFrom").val();
+                toDate = $("#datepickerTo").val();
+                if (fromDate == null || toDate == null)
+                {
+                    alert("Please select date from and to date");
+                    return;
+                }
+                refreshScreen(deviceId, "", "");
+            }
+
+            function refreshScreen(deviceId, fromDate, toDate) {
+                fromDate = $("#datepickerFrom").val();
+                toDate = $("#datepickerTo").val();
+
+                $.ajax({
+                    type: 'POST',
+                    data: { deviceId: deviceId, fromDate: fromDate, toDate: toDate },
+                    url: '/Device/GetScreensByDeviceId',
+                    success: function (Responce) {
+                        var html = "";
+                        $(Responce.Rresult).each(function (i) {
+                            // html += '<dl><dt> <a href="#" >' + Responce.Rresult[i].Screenshot + '</a></dt></dl>';
+                            html += '<div class="imgResponsive"> <img src=' + Responce.Rresult[i].Screenshot + '></div>';
+                        });
+                        //alert("html"+html);
+                        $("#imgDiv").empty();
+                        $("#imgDiv").append(html);
+                    }
+                });
+            }
+        </script>

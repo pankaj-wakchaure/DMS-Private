@@ -1,0 +1,10 @@
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\DMS.Data.dll
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\DMS.Data.pdb
+E:\Pankaj Project\DMS\DMS.Data\obj\Debug\DMS.Data.dll
+E:\Pankaj Project\DMS\DMS.Data\obj\Debug\DMS.Data.pdb
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\DMS.Data.dll.config
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\EntityFramework.dll
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\EntityFramework.xml
+E:\Pankaj Project\DMS\DMS.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\Pankaj Project\DMS\DMS.Data\obj\Debug\DMS.Data.csprojResolveAssemblyReference.cache

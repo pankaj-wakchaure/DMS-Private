@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MonitoringSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Devices">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DeviceName" Type="varchar" MaxLength="100" />
+          <Property Name="DeviceStatus" Type="bit" />
+          <Property Name="DeviceIp" Type="varchar" MaxLength="30" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="IsShutdownDevice" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_ScreenshotDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_DeviceId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Screenshot" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <Association Name="FK_Tbl_ScreenshotDetails_Tbl_Devices">
+          <End Role="Tbl_Devices" Type="Self.Tbl_Devices" Multiplicity="1" />
+          <End Role="Tbl_ScreenshotDetails" Type="Self.Tbl_ScreenshotDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Tbl_ScreenshotDetails">
+              <PropertyRef Name="Fk_DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MonitoringSystemModelStoreContainer">
+          <EntitySet Name="Tbl_Devices" EntityType="Self.Tbl_Devices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ScreenshotDetails" EntityType="Self.Tbl_ScreenshotDetails" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_ScreenshotDetails_Tbl_Devices" Association="Self.FK_Tbl_ScreenshotDetails_Tbl_Devices">
+            <End Role="Tbl_Devices" EntitySet="Tbl_Devices" />
+            <End Role="Tbl_ScreenshotDetails" EntitySet="Tbl_ScreenshotDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MonitoringSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Devices">
+          <Key>
+            <PropertyRef Name="DeviceId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceStatus" Type="Boolean" />
+          <Property Name="DeviceIp" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsShutdownDevice" Type="Boolean" />
+          <NavigationProperty Name="Tbl_ScreenshotDetails" Relationship="Self.FK_Tbl_ScreenshotDetails_Tbl_Devices" FromRole="Tbl_Devices" ToRole="Tbl_ScreenshotDetails" />
+        </EntityType>
+        <EntityType Name="Tbl_ScreenshotDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_DeviceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Screenshot" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="Tbl_Devices" Relationship="Self.FK_Tbl_ScreenshotDetails_Tbl_Devices" FromRole="Tbl_ScreenshotDetails" ToRole="Tbl_Devices" />
+        </EntityType>
+        <Association Name="FK_Tbl_ScreenshotDetails_Tbl_Devices">
+          <End Role="Tbl_Devices" Type="Self.Tbl_Devices" Multiplicity="1" />
+          <End Role="Tbl_ScreenshotDetails" Type="Self.Tbl_ScreenshotDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Devices">
+              <PropertyRef Name="DeviceId" />
+            </Principal>
+            <Dependent Role="Tbl_ScreenshotDetails">
+              <PropertyRef Name="Fk_DeviceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MonitoringSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Devices" EntityType="Self.Tbl_Devices" />
+          <EntitySet Name="Tbl_ScreenshotDetails" EntityType="Self.Tbl_ScreenshotDetails" />
+          <AssociationSet Name="FK_Tbl_ScreenshotDetails_Tbl_Devices" Association="Self.FK_Tbl_ScreenshotDetails_Tbl_Devices">
+            <End Role="Tbl_Devices" EntitySet="Tbl_Devices" />
+            <End Role="Tbl_ScreenshotDetails" EntitySet="Tbl_ScreenshotDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MonitoringSystemModelStoreContainer" CdmEntityContainer="MonitoringSystemEntities">
+          <EntitySetMapping Name="Tbl_Devices">
+            <EntityTypeMapping TypeName="MonitoringSystemModel.Tbl_Devices">
+              <MappingFragment StoreEntitySet="Tbl_Devices">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+                <ScalarProperty Name="DeviceStatus" ColumnName="DeviceStatus" />
+                <ScalarProperty Name="DeviceIp" ColumnName="DeviceIp" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsShutdownDevice" ColumnName="IsShutdownDevice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ScreenshotDetails">
+            <EntityTypeMapping TypeName="MonitoringSystemModel.Tbl_ScreenshotDetails">
+              <MappingFragment StoreEntitySet="Tbl_ScreenshotDetails">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Fk_DeviceId" ColumnName="Fk_DeviceId" />
+                <ScalarProperty Name="Screenshot" ColumnName="Screenshot" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

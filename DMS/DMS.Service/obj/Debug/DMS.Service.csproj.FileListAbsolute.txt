@@ -1,0 +1,9 @@
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\DMS.Service.dll
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\DMS.Service.pdb
+E:\Pankaj Project\DMS\DMS.Service\obj\Debug\DMS.Service.dll
+E:\Pankaj Project\DMS\DMS.Service\obj\Debug\DMS.Service.pdb
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\DMS.Data.dll
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\EntityFramework.dll
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\DMS.Data.pdb
+E:\Pankaj Project\DMS\DMS.Service\bin\Debug\EntityFramework.xml
+E:\Pankaj Project\DMS\DMS.Service\obj\Debug\DMS.Service.csprojResolveAssemblyReference.cache

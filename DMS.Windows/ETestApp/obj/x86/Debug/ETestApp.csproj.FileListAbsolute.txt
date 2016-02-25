@@ -1,0 +1,32 @@
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\ETestApp.exe
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\ETestApp.pdb
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.Form1.resources
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.Properties.Resources.resources
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.csproj.GenerateResource.Cache
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.exe
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.pdb
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\Ionic.Zip.dll
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\ETestApp.exe.config
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\Microsoft.ReportingServices.Interfaces.dll
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\bin\Debug\Microsoft.SqlServer.DmfSqlClrWrapper.dll
+H:\Poc Projects\Elo\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.csprojResolveAssemblyReference.cache
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\bin\Debug\ETestApp.exe.config
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.exe
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.pdb
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\bin\Debug\ETestApp.exe
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\bin\Debug\ETestApp.pdb
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\bin\Debug\Microsoft.ReportingServices.Interfaces.dll
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\bin\Debug\Microsoft.SqlServer.DmfSqlClrWrapper.dll
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.Form1.resources
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.Properties.Resources.resources
+E:\Pankaj Project\poc project\TestAppEloo\ETestApp\obj\x86\Debug\ETestApp.csproj.GenerateResource.Cache
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Debug\ETestApp.exe.config
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Debug\ETestApp.exe
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Debug\ETestApp.pdb
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Debug\ETestApp.exe
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Debug\ETestApp.pdb
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Debug\Microsoft.ReportingServices.Interfaces.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Debug\Microsoft.SqlServer.DmfSqlClrWrapper.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Debug\ETestApp.Form1.resources
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Debug\ETestApp.Properties.Resources.resources
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Debug\ETestApp.csproj.GenerateResource.Cache

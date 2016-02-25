@@ -1,0 +1,15 @@
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\ETestApp.exe.config
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Release\ETestApp.Form1.resources
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Release\ETestApp.Properties.Resources.resources
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Release\DMS.Windows.csproj.GenerateResource.Cache
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\ETestApp.exe
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\ETestApp.pdb
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\Microsoft.ReportingServices.Interfaces.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\Microsoft.SqlServer.DmfSqlClrWrapper.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Release\ETestApp.exe
+E:\Pankaj Project\DMS.Windows\ETestApp\obj\x86\Release\ETestApp.pdb
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\EntityFramework.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\EntityFramework.SqlServer.dll
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\EntityFramework.xml
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\EntityFramework.SqlServer.xml
+E:\Pankaj Project\DMS.Windows\ETestApp\bin\Release\Quartz.dll

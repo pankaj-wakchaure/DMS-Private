@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MonitoringSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MonitoringSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tbl_Devices" EntityType="MonitoringSystemModel.Tbl_Devices" />
+    <EntitySet Name="Tbl_ScreenshotDetails" EntityType="MonitoringSystemModel.Tbl_ScreenshotDetails" />
+    <AssociationSet Name="FK_Tbl_ScreenshotDetails_Tbl_Devices" Association="MonitoringSystemModel.FK_Tbl_ScreenshotDetails_Tbl_Devices">
+      <End Role="Tbl_Devices" EntitySet="Tbl_Devices" />
+      <End Role="Tbl_ScreenshotDetails" EntitySet="Tbl_ScreenshotDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tbl_Devices">
+    <Key>
+      <PropertyRef Name="DeviceId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeviceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceStatus" Type="Boolean" />
+    <Property Name="DeviceIp" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsShutdownDevice" Type="Boolean" />
+    <NavigationProperty Name="Tbl_ScreenshotDetails" Relationship="MonitoringSystemModel.FK_Tbl_ScreenshotDetails_Tbl_Devices" FromRole="Tbl_Devices" ToRole="Tbl_ScreenshotDetails" />
+  </EntityType>
+  <EntityType Name="Tbl_ScreenshotDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fk_DeviceId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Screenshot1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screenshot2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screenshot3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screenshot4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Screenshot5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <NavigationProperty Name="Tbl_Devices" Relationship="MonitoringSystemModel.FK_Tbl_ScreenshotDetails_Tbl_Devices" FromRole="Tbl_ScreenshotDetails" ToRole="Tbl_Devices" />
+  </EntityType>
+  <Association Name="FK_Tbl_ScreenshotDetails_Tbl_Devices">
+    <End Type="MonitoringSystemModel.Tbl_Devices" Role="Tbl_Devices" Multiplicity="1" />
+    <End Type="MonitoringSystemModel.Tbl_ScreenshotDetails" Role="Tbl_ScreenshotDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Devices">
+        <PropertyRef Name="DeviceId" />
+      </Principal>
+      <Dependent Role="Tbl_ScreenshotDetails">
+        <PropertyRef Name="Fk_DeviceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
